@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Akhir - Kelompok 3 POKLAHSAR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 50%, #4a5568 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        /* ================= HEADER ================= */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header h2 {
+            color: #ffeb3b;
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .btn-kembali {
+            background: white;
+            color: #1e3c72;
+            padding: 8px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-kembali:hover {
+            background: #f0f4ff;
+            transform: translateY(-1px);
+        }
+
+        /* ================= MAIN CONTAINER ================= */
+        .container {
+            width: 100%;
+            max-width: 850px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Block Section Utama */
+        .section-block {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Label Kategori (INDIVIDU & KELOMPOK) */
+        .category-title {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .category-title.main-title {
+            margin-bottom: 0;
+        }
+
+        /* Menu List Item / Tombol Link */
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            padding-left: 25px;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Tombol Spesifik Website Kelompok (Warna Khasiat Olive/Gold Muda) */
+        .btn-website {
+            background: rgba(143, 155, 119, 0.4);
+            border: 1px solid rgba(235, 254, 197, 0.4);
+            justify-content: center;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .btn-website:hover {
+            background: rgba(143, 155, 119, 0.6);
+            padding-left: 20px; /* Tetap di tengah */
+        }
+
+        /* ================= KOTAK INFORMASI ================= */
+        .info-block {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-title {
+            color: #ffeb3b;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-text {
+            font-size: 13.5px;
+            line-height: 1.6;
+            opacity: 0.9;
+            text-align: justify;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            body { padding: 20px 10px; }
+            .header h1 { font-size: 24px; }
+            .header h2 { font-size: 18px; }
+            .info-block { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>📚 Tugas Akhir</h1>
+        <h2>Kelompok 3 POKLAHSAR</h2>
+        <p>Sistem Informasi Manajemen Perikanan</p>
+        <button onclick="window.history.back()" class="btn-kembali">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </button>
+    </div>
+
+    <div class="container">
+
+        <div class="section-block">
+            <div class="category-title main-title">
+                <i class="fas fa-folder"></i> INDIVIDU
+            </div>
+            <div class="menu-list">
+                <a href="#" class="menu-item">
+                    <i class="fas fa-coins" style="color: #ffb300;"></i> Iuran Kelompok
+                </a>
+            </div>
+        </div>
+
+        <div class="section-block">
+            <div class="category-title">
+                <i class="fas fa-folder"></i> KELOMPOK
+            </div>
+            
+            <div class="menu-list">
+                <a href="https://docs.google.com/spreadsheets/d/1QFjZ0pLQoNAniymWxwxOfYw2_J6z-7YmIlOgrnpuyRw/edit?usp=sharing" target="_blank" class="menu-item">
+                    <i class="fas fa-book" style="color: #e3f2fd;"></i> Sejarah Kelompok
+                </a>
+
+                <a href="https://docs.google.com/spreadsheets/d/1fpfENk1sUgzKDmSeBWTzPMrBzOJ-n2nP9RVYVieTQZo/edit?usp=sharing" target="_blank" class="menu-item">
+                    <i class="fas fa-paste" style="color: #ffcdd2;"></i> Data Dasar Kelompok
+                </a>
+
+                <a href="https://docs.google.com/spreadsheets/d/1HN_755mmQQVjFg6XmzhN9Q_kdyLPcGCITDP8NiFmp1I/edit?usp=sharing" target="_blank" class="menu-item">
+                    <i class="fas fa-users" style="color: #ce93d8;"></i> Data Anggota Kelompok
+                </a>
+
+                <a href="https://docs.google.com/spreadsheets/d/15PHU5mdx6Z1io8OL32c-QDuni7qLjHGkbHuoMjDX_kE/edit?usp=sharing" target="_blank" class="menu-item">
+                    <i class="fas fa-fish" style="color: #81d4fa;"></i> Data Komoditas Perikanan
+                </a>
+
+                <a href="https://github.com" target="_blank" class="menu-item">
+                    <i class="fab fa-github" style="color: #ffffff;"></i> Hasil Data Kelompok
+                </a>
+
+                <a href="#" class="menu-item btn-website">
+                    <i class="fas fa-globe"></i> Website Kelompok 3 POKLAHSAR
+                </a>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <div class="info-title">
+                <i class="fas fa-info-circle"></i> Informasi
+            </div>
+            <div class="info-text">
+                Website ini dibuat sebagai media penyajian Tugas Akhir Sistem Informasi Manajemen Perikanan yang memuat data kelompok POKLAHSAR dan pengelolaan iuran kelompok secara terintegrasi.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 Sistem Informasi Manajemen Perikanan<br>
+        Tiaraisya Akbar | Kelompok 3 POKLAHSAR
+    </div>
+
+</body>
+</html>
