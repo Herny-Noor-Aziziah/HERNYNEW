@@ -81,6 +81,30 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
         }
+        .website-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(to right, #10b981, #34d399);
+            color: white;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 1rem 1.5rem;
+            margin-top: 1rem;
+            width: 100%;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+        .website-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+            filter: brightness(1.1);
+        }
         .arrow { 
             transition: transform 0.3s ease; 
             font-size: 1.1rem; 
@@ -259,7 +283,6 @@
                 </table>
             </div>
 
-            <!-- YANG TERBARU: HANYA MENAMBAHKAN TOMBOL SUB-MENU DAN TABEL DATA KELOMPOKNYA saja -->
             <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Data Kelompok & Rencana Usaha Bersama <span class="arrow">▼</span></div>
             <div id="rencana-usaha-content" class="content-container">
                 <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok & Rencana Usaha Bersama</h3>
@@ -274,6 +297,11 @@
                         <tr><td>Sumber Rejeki</td><td>eki18wo</td><td>Bojonegoro</td><td>Ikan Jendil & Patin</td></tr>
                     </tbody>
                 </table>
+                
+                <!-- TOMBOL WEBSITE KELOMPOK TERPASANG DI BAWAH TABEL -->
+                <a href="https://herny-noor-aziziah.github.io/HERNYBARUUUU/" target="_blank" class="website-btn">
+                    🌐 Website Kelompok 3 POKLAHSAR ↗
+                </a>
             </div>
         </div>
     </div>
