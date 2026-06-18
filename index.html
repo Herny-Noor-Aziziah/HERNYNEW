@@ -25,7 +25,7 @@
             transition: max-height 0.5s ease-out;
         }
         .accordion-content.open {
-            max-height: 7000px;
+            max-height: 8000px;
         }
         .folder-icon {
             transition: transform 0.3s ease;
@@ -36,22 +36,31 @@
         .sub-menu {
             transition: all 0.3s ease;
         }
-        .sub-menu:hover {
-            background-color: #475569;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
-        }
-        th, td {
-            padding: 14px 12px;
-            text-align: left;
-            border-bottom: 1px solid #475569;
+            background-color: #1e2937;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
         }
         th {
-            background-color: #1e40af;
+            background: linear-gradient(to right, #1e40af, #3b82f6);
             color: white;
+            padding: 16px 12px;
             font-weight: 600;
+            text-align: left;
+        }
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #334155;
+            color: #e2e8f0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: #334155;
         }
     </style>
 </head>
@@ -101,11 +110,11 @@
                 <span class="font-semibold text-xl">KELOKPOK</span>
             </button>
             
-            <div id="kelompok-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-3xl p-3 space-y-2">
+            <div id="kelompok-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-3xl p-3 space-y-3">
 
-                <!-- Sub Menu Items - Diperbaiki tampilannya -->
+                <!-- 1. Sejarah -->
                 <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
                         <i class="fas fa-book text-blue-400 w-6"></i>
                         <span class="font-medium text-lg">Sejarah Kelompok</span>
                     </button>
@@ -117,24 +126,25 @@
                     </div>
                 </div>
 
+                <!-- 2. Data Dasar -->
                 <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
                         <i class="fas fa-database text-amber-400 w-6"></i>
                         <span class="font-medium text-lg">Data Dasar Kelompok</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8 pt-4 overflow-x-auto">
-                        <table class="text-sm">
+                    <div class="accordion-content px-6 pb-8 pt-4">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Nama Poklahsar</th>
                                     <th>Token</th>
                                     <th>Desa / Kecamatan</th>
                                     <th>Kabupaten</th>
-                                    <th>No. Hp Ketua</th>
+                                    <th>No. HP Ketua</th>
                                     <th>Tanggal Pendirian</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-slate-200">
+                            <tbody>
                                 <tr><td>Poklahsar Bunga Merah</td><td>rah12ad</td><td>Desa Klampis Timur, Kec. Klampis</td><td>Bangkalan</td><td>0</td><td>12/06/2012</td></tr>
                                 <tr><td>Poklahsar Srikandi</td><td>di 19S</td><td>Desa Puuhopa, Kec. Puriala</td><td>Konawe</td><td>081242551010</td><td>03/06/2019</td></tr>
                                 <tr><td>Poklahsar Waroh</td><td>roh16h</td><td>Desa Sesaot, Kec. Narmada</td><td>Lombok Barat</td><td>087864105341</td><td>15/05/2016</td></tr>
@@ -144,13 +154,14 @@
                     </div>
                 </div>
 
+                <!-- 3. Data Anggota -->
                 <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
                         <i class="fas fa-users text-violet-400 w-6"></i>
                         <span class="font-medium text-lg">Data Anggota Kelompok</span>
                     </button>
                     <div class="accordion-content px-6 pb-8 pt-4 overflow-x-auto">
-                        <table class="text-sm">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Kelompok</th>
@@ -159,7 +170,8 @@
                                     <th>Alamat</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-slate-200 divide-y divide-slate-700">
+                            <tbody>
+                                <!-- Bunga Merah -->
                                 <tr><td rowspan="10">Poklahsar Bunga Merah</td><td>Habibah (Habi-11)</td><td>Sekretaris</td><td>Klampis Timur</td></tr>
                                 <tr><td>Jumriyah (Jumr-27)</td><td>Anggota</td><td>Klampis Timur</td></tr>
                                 <tr><td>Amina (Amin-20)</td><td>Anggota</td><td>Klampis Timur</td></tr>
@@ -175,20 +187,21 @@
                     </div>
                 </div>
 
+                <!-- 4. Data Komoditas -->
                 <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
                         <i class="fas fa-fish text-cyan-400 w-6"></i>
                         <span class="font-medium text-lg">Data Komoditas Perikanan</span>
                     </button>
                     <div class="accordion-content px-6 pb-8 pt-4">
-                        <table class="text-sm">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>Kelompok</th>
                                     <th>Jenis Komoditas</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-slate-200">
+                            <tbody>
                                 <tr><td>Poklahsar Bunga Merah</td><td>Udang</td></tr>
                                 <tr><td>Poklahsar Bunga Merah</td><td>Ikan Laut</td></tr>
                                 <tr><td>Poklahsar Srikandi</td><td>Belut</td></tr>
@@ -203,6 +216,7 @@
                     </div>
                 </div>
 
+                <!-- 5. Hasil -->
                 <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
                     <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
                         <i class="fas fa-chart-bar text-emerald-400 w-6"></i>
@@ -236,7 +250,6 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
         <div class="text-center text-xs text-slate-400 mt-12">
             © 2026 Sistem Informasi Manajemen Perikanan<br>
             Tiaraisya Akbar | Kelompok 3 POKLAHSAR
@@ -247,11 +260,9 @@
         function toggleSub(btn) {
             const content = btn.nextElementSibling;
             const allContents = document.querySelectorAll('#kelompok-content .accordion-content');
-            
             allContents.forEach(c => {
                 if (c !== content) c.classList.remove('open');
             });
-            
             content.classList.toggle('open');
         }
 
