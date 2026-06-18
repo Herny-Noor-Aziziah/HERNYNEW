@@ -3,238 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kelompok Poklahsar - Pengolah Hasil Perikanan</title>
+    <title>Tugas Akhir - Kelompok 3 POKLAHSAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+            background: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        h1 {
-            text-align: center;
-            color: #1e3a8a;
+        .menu-card {
+            transition: all 0.3s ease;
         }
-        h2 {
-            color: #1e40af;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 8px;
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
         }
-        h3 {
-            color: #2563eb;
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .accordion-content.open {
+            max-height: 5000px;
         }
-        th, td {
-            border: 1px solid #64748b;
-            padding: 10px;
-            text-align: left;
+        .folder-icon {
+            transition: transform 0.3s ease;
         }
-        th {
-            background-color: #1e40af;
-            color: white;
+        .open .folder-icon {
+            transform: rotate(90deg);
         }
-        .section {
-            margin-bottom: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .komoditas {
-            margin-top: 15px;
-        }
-        ul {
-            padding-left: 20px;
+        .sub-item {
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="text-slate-100">
 
-    <h1>Data Kelompok Poklahsar Pengolah Hasil Perikanan</h1>
-    <p style="text-align: center; font-style: italic;">Data lengkap dari semua kelompok yang telah dijabarkan secara rinci tanpa pemotongan</p>
-
-    <!-- SEJARAH KELOMPOK -->
-    <div class="section">
-        <h2>1. Sejarah Kelompok</h2>
+    <div class="max-w-4xl mx-auto py-8 px-6">
         
-        <h3>Poklahsar Bunga Merah</h3>
-        <p>Poklahsar Bunga Merah merupakan kelompok usaha yang bergerak dalam pengolahan dan pemasaran hasil perikanan. Kelompok ini dibentuk sebagai wadah bagi anggota untuk meningkatkan pendapatan, keterampilan, dan kesejahteraan melalui usaha pengolahan hasil perikanan.</p>
-        
-        <h3>Poklahsar Srikandi</h3>
-        <p>Poklahsar Srikandi merupakan kelompok usaha pengolah hasil perikanan yang dibentuk untuk mengembangkan keterampilan masyarakat dalam pengolahan produk perikanan. Kelompok ini menjadi wadah bagi anggota untuk bekerja sama, meningkatkan kapasitas usaha serta memperkuat pemasaran produk hasil olahan sehingga mampu meningkatkan pendapatan keluarga dan kelompok.</p>
-        
-        <h3>Poklahsar WAROH</h3>
-        <p>Poklahsar WAROH merupakan kelompok usaha pengolahan hasil yang beranggotakan masyarakat yang memiliki komitmen untuk mengembangkan usaha berbasis produk olahan perikanan. Kelompok ini aktif dalam kegiatan produksi, pemasaran, pelatihan, dan pengembangan usaha guna meningkatkan kualitas produk serta daya saing usaha anggota kelompok.</p>
-        
-        <h3>Poklahsar Sumber Rejeki</h3>
-        <p>Poklahsar Sumber Rejeki dibentuk sebagai sarana pengembangan usaha pengolahan dan pemasaran hasil perikanan yang berbasis pada potensi sumber daya lokal. Melalui kegiatan kelompok, anggota dapat mengembangkan usaha secara bersama-sama, meningkatkan mutu produk, dan memperluas akses pasar untuk meningkatkan kesejahteraan anggota.</p>
-    </div>
-
-    <!-- DATA DASAR KELOMPOK -->
-    <div class="section">
-        <h2>2. Data Dasar Kelompok</h2>
-        
-        <table>
-            <tr>
-                <th>Nama Poklahsar</th>
-                <th>Token Kelompok</th>
-                <th>Alamat</th>
-                <th>Desa/Kecamatan</th>
-                <th>Kabupaten</th>
-                <th>No. Hp Ketua</th>
-                <th>Koordinat</th>
-                <th>Tanggal Pendirian</th>
-                <th>Kelas Kelompok</th>
-                <th>Sertifikat Pengukuhan</th>
-            </tr>
-            <tr>
-                <td>Poklahsar Bunga Merah</td>
-                <td>rah12ad</td>
-                <td>Dsn. Spao</td>
-                <td>Desa Klampis Timur, Kecamatan Klampis</td>
-                <td>Bangkalan</td>
-                <td>0</td>
-                <td>-6.89322,112.90864</td>
-                <td>12/06/2012</td>
-                <td>Pemula</td>
-                <td>411.61/110.5/433.105/2012</td>
-            </tr>
-            <tr>
-                <td>Poklahsar Srikandi</td>
-                <td>di 19S</td>
-                <td>-</td>
-                <td>Desa Puuhopa, Kecamatan Puriala</td>
-                <td>Konawe</td>
-                <td>081242551010</td>
-                <td>122.078063,-4.056849</td>
-                <td>03/06/2019</td>
-                <td>Pemula</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Poklahsar Waroh</td>
-                <td>roh16h</td>
-                <td>Dsn. Penangke</td>
-                <td>Desa Sesaot, Kecamatan Narmada</td>
-                <td>Lombok Barat</td>
-                <td>087864105341</td>
-                <td>-8.548669,116.236742</td>
-                <td>15/05/2016</td>
-                <td>Pemula</td>
-                <td>1.3.52.01.03.0819</td>
-            </tr>
-            <tr>
-                <td>Poklahsar Sumber Rejeki</td>
-                <td>eki18wo</td>
-                <td>Dsn. Jipangulu</td>
-                <td>Ngelo, Kecamatan Margomulyo</td>
-                <td>Bojonegoro</td>
-                <td>085748523588</td>
-                <td>-7.250727,111.454643</td>
-                <td>21/09/2018</td>
-                <td>Pemula</td>
-                <td>188/17/KEP/412.51.23.2002/2018</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- DATA ANGGOTA KELOMPOK -->
-    <div class="section">
-        <h2>3. Data Anggota Kelompok</h2>
-        
-        <h3>Poklahsar Bunga Merah (Token: rah12ad)</h3>
-        <ul>
-            <li>Habibah (Habi-11) - Sekretaris - Klampis Timur</li>
-            <li>Jumriyah (Jumr-27) - Anggota - Klampis Timur</li>
-            <li>Amina (Amin-20) - Anggota - Klampis Timur</li>
-            <li>Muminah (Mumi-00) - Anggota - Klampis Timur</li>
-            <li>Mutmaimah (Mutm-28) - Anggota - Klampis Timur</li>
-            <li>Syamsyiah (Syam-08) - Anggota - Klampis Timur</li>
-            <li>Rokidah (Roki-20) - Anggota - Klampis Timur</li>
-            <li>Nor Arofah (Nor -56) - Anggota - Klampis Timur</li>
-            <li>Sainab (Sain-39) - Anggota - Klampis Timur</li>
-            <li>Ida Susanti (Ida -46) - Bendahara - Klampis Timur</li>
-        </ul>
-
-        <h3>Poklahsar Srikandi (Token: di 19S)</h3>
-        <ul>
-            <li>Yanti (Yant-17) - Sekretaris - Desa Puuhopa</li>
-            <li>Juliasih (Juli-30) - Anggota - Desa Puuhopa</li>
-            <li>Cucu R (Cucu-20) - Anggota - Desa Puuhopa</li>
-            <li>Neneng (Nene-38) - Anggota - Desa Puuhopa</li>
-            <li>Titi M (Titi-14) - Anggota - Desa Puuhopa</li>
-            <li>Partini (Part-28) - Anggota - Desa Puuhopa (Phuuhopa)</li>
-            <li>Rohma (Rohm-16) - Anggota - Desa Puuhopa</li>
-            <li>Cici (Cici-53) - Anggota - Desa Puuhopa</li>
-            <li>Ira Yusnita (Ira -37) - Bendahara - Desa Puuhopa</li>
-        </ul>
-
-        <h3>Poklahsar Waroh (Token: roh16h)</h3>
-        <ul>
-            <li>Suryati (Sury-33) - Sekretaris - Petak</li>
-            <li>Fatmawati (Fatm-51) - Anggota - Petak</li>
-            <li>Saeraah (Saer-32) - Anggota - Petak</li>
-            <li>Seniah (Seni-58) - Anggota - Petak</li>
-            <li>Habibbahurripa'ah (Habi-25) - Anggota - Petak</li>
-            <li>Ani Maya Sopa (Ani -20) - Anggota - Petak</li>
-            <li>Indayani (Inda-30) - Anggota - Petak</li>
-            <li>Ani (Ani-48) - Anggota - Petak</li>
-            <li>Ria Hartini (Ria -20) - Bendahara - Petak</li>
-        </ul>
-
-        <h3>Poklahsar Sumber Rejeki (Token: eki18wo)</h3>
-        <ul>
-            <li>Wiwin Sunarti (Wiwi-04) - Sekretaris - Jipanghulu</li>
-            <li>Semiati (Semi-48) - Anggota - Jipanghulu</li>
-            <li>Warti A (Wart-12) - Anggota - Ngelo</li>
-            <li>Sariyah (Sari-23) - Anggota - Jipanghulu</li>
-            <li>Jirah (Jira-53) - Anggota - Ngelo</li>
-            <li>Sri Sumari (Sri -36) - Anggota - Jipanghulu</li>
-            <li>Supinah (Supi-13) - Anggota - Jipanghulu</li>
-            <li>Warti B (Wart-33) - Anggota - Ngelo</li>
-            <li>Sulasri (Sula-21) - Anggota - Jipanghulu</li>
-            <li>Kartini (Kart-42) - Bendahara - Jipanghulu</li>
-        </ul>
-    </div>
-
-    <!-- DATA KOMODITAS PERIKANAN -->
-    <div class="section">
-        <h2>4. Data Komoditas Perikanan</h2>
-        
-        <h3>Poklahsar Bunga Merah</h3>
-        <div class="komoditas">
-            <p><strong>Jenis Komoditas 1:</strong> Udang</p>
-            <p><strong>Jenis Komoditas 2:</strong> Ikan Laut</p>
+        <!-- HEADER -->
+        <div class="text-center mb-10">
+            <div class="flex justify-center mb-3">
+                <div class="bg-emerald-500 text-white px-3 py-1 rounded-lg text-sm font-medium inline-flex items-center gap-2">
+                    <i class="fas fa-tasks"></i>
+                    Tugas Akhir
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-white">Kelompok 3 POKLAHSAR</h1>
+            <p class="text-cyan-300 mt-1">Sistem Informasi Manajemen Perikanan</p>
+            
+            <button onclick="window.history.back()" 
+                    class="mt-6 bg-white text-slate-800 hover:bg-slate-100 px-6 py-2.5 rounded-2xl font-medium inline-flex items-center gap-2 transition-all">
+                <i class="fas fa-arrow-left"></i>
+                Kembali
+            </button>
         </div>
 
-        <h3>Poklahsar Srikandi</h3>
-        <div class="komoditas">
-            <p><strong>Jenis Komoditas 1:</strong> Belut</p>
+        <!-- INDIVIDU -->
+        <div class="mb-6">
+            <button onclick="toggleSection(this)" 
+                    class="menu-card w-full bg-[#1e40af] hover:bg-[#2563eb] px-6 py-5 rounded-2xl flex items-center gap-4 text-left">
+                <i class="fas fa-folder folder-icon text-2xl"></i>
+                <span class="font-semibold text-xl">INDIVIDU</span>
+            </button>
+            <div id="individu-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-2xl p-2">
+                <button onclick="alert('Halaman Iuran Kelompok belum tersedia')" 
+                        class="w-full bg-[#334155] hover:bg-[#475569] px-6 py-4 rounded-xl flex items-center gap-3 text-left">
+                    <i class="fas fa-hand-holding-dollar text-emerald-400"></i>
+                    <span>Iuran Kelompok</span>
+                </button>
+            </div>
         </div>
 
-        <h3>Poklahsar Sumber Rejeki</h3>
-        <div class="komoditas">
-            <p><strong>Jenis Komoditas 1:</strong> Ikan Jendil</p>
-            <p><strong>Jenis Komoditas 2:</strong> Ikan Wader</p>
-            <p><strong>Jenis Komoditas 3:</strong> Ikan Patin</p>
-            <p><strong>Jenis Komoditas 4:</strong> Ikan Bader</p>
-            <p><strong>Jenis Komoditas 5:</strong> Ikan Tawes</p>
+        <!-- KELOKPOK -->
+        <div>
+            <button onclick="toggleSection(this)" 
+                    class="menu-card w-full bg-[#1e40af] hover:bg-[#2563eb] px-6 py-5 rounded-2xl flex items-center gap-4 text-left">
+                <i class="fas fa-folder folder-icon text-2xl"></i>
+                <span class="font-semibold text-xl">KELOKPOK</span>
+            </button>
+            
+            <div id="kelompok-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-3xl p-3 space-y-3">
+
+                <!-- 1. Sejarah Kelompok -->
+                <div class="bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
+                        <i class="fas fa-book text-blue-400"></i>
+                        <span class="font-medium">Sejarah Kelompok</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-8 text-slate-200 leading-relaxed">
+                        <p><strong>Poklahsar Bunga Merah</strong><br>
+                        Poklahsar Bunga Merah merupakan kelompok usaha yang bergerak dalam pengolahan dan pemasaran hasil perikanan. Kelompok ini dibentuk sebagai wadah bagi anggota untuk meningkatkan pendapatan, keterampilan, dan kesejahteraan melalui usaha pengolahan hasil perikanan.</p>
+                        <br>
+                        <p><strong>Poklahsar Srikandi</strong><br>
+                        Poklahsar Srikandi merupakan kelompok usaha pengolah hasil perikanan yang dibentuk untuk mengembangkan keterampilan masyarakat dalam pengolahan produk perikanan. Kelompok ini menjadi wadah bagi anggota untuk bekerja sama, meningkatkan kapasitas usaha serta memperkuat pemasaran produk hasil olahan sehingga mampu meningkatkan pendapatan keluarga dan kelompok.</p>
+                        <br>
+                        <p><strong>Poklahsar WAROH</strong><br>
+                        Poklahsar WAROH merupakan kelompok usaha pengolahan hasil yang beranggotakan masyarakat yang memiliki komitmen untuk mengembangkan usaha berbasis produk olahan perikanan. Kelompok ini aktif dalam kegiatan produksi, pemasaran, pelatihan, dan pengembangan usaha guna meningkatkan kualitas produk serta daya saing usaha anggota kelompok.</p>
+                        <br>
+                        <p><strong>Poklahsar Sumber Rejeki</strong><br>
+                        Poklahsar Sumber Rejeki dibentuk sebagai sarana pengembangan usaha pengolahan dan pemasaran hasil perikanan yang berbasis pada potensi sumber daya lokal. Melalui kegiatan kelompok, anggota dapat mengembangkan usaha secara bersama-sama, meningkatkan mutu produk, dan memperluas akses pasar untuk meningkatkan kesejahteraan anggota.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Data Dasar Kelompok -->
+                <div class="bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
+                        <i class="fas fa-database text-amber-400"></i>
+                        <span class="font-medium">Data Dasar Kelompok</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-8">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-700">
+                                    <th class="py-4 px-4 text-left">Nama Poklahsar</th>
+                                    <th class="py-4 px-4 text-left">Token Kelompok</th>
+                                    <th class="py-4 px-4 text-left">Alamat</th>
+                                    <th class="py-4 px-4 text-left">Desa / Kecamatan</th>
+                                    <th class="py-4 px-4 text-left">Kabupaten</th>
+                                    <th class="py-4 px-4 text-left">No. Hp Ketua</th>
+                                    <th class="py-4 px-4 text-left">Koordinat</th>
+                                    <th class="py-4 px-4 text-left">Tanggal Pendirian</th>
+                                    <th class="py-4 px-4 text-left">Kelas Kelompok</th>
+                                    <th class="py-4 px-4 text-left">Sertifikat Pengukuhan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-600 text-slate-200">
+                                <tr>
+                                    <td class="py-4 px-4 font-medium">Poklahsar Bunga Merah</td>
+                                    <td class="py-4 px-4">rah12ad</td>
+                                    <td class="py-4 px-4">Dsn. Spao</td>
+                                    <td class="py-4 px-4">Desa Klampis Timur, Kecamatan Klampis</td>
+                                    <td class="py-4 px-4">Bangkalan</td>
+                                    <td class="py-4 px-4">0</td>
+                                    <td class="py-4 px-4">-6.89322,112.90864</td>
+                                    <td class="py-4 px-4">12/06/2012</td>
+                                    <td class="py-4 px-4">Pemula</td>
+                                    <td class="py-4 px-4">411.61/110.5/433.105/2012</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-4 font-medium">Poklahsar Srikandi</td>
+                                    <td class="py-4 px-4">di 19S</td>
+                                    <td class="py-4 px-4">-</td>
+                                    <td class="py-4 px-4">Desa Puuhopa, Kecamatan Puriala</td>
+                                    <td class="py-4 px-4">Konawe</td>
+                                    <td class="py-4 px-4">081242551010</td>
+                                    <td class="py-4 px-4">122.078063,-4.056849</td>
+                                    <td class="py-4 px-4">03/06/2019</td>
+                                    <td class="py-4 px-4">Pemula</td>
+                                    <td class="py-4 px-4">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-4 font-medium">Poklahsar Waroh</td>
+                                    <td class="py-4 px-4">roh16h</td>
+                                    <td class="py-4 px-4">Dsn. Penangke</td>
+                                    <td class="py-4 px-4">Desa Sesaot, Kecamatan Narmada</td>
+                                    <td class="py-4 px-4">Lombok Barat</td>
+                                    <td class="py-4 px-4">087864105341</td>
+                                    <td class="py-4 px-4">-8.548669,116.236742</td>
+                                    <td class="py-4 px-4">15/05/2016</td>
+                                    <td class="py-4 px-4">Pemula</td>
+                                    <td class="py-4 px-4">1.3.52.01.03.0819</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-4 font-medium">Poklahsar Sumber Rejeki</td>
+                                    <td class="py-4 px-4">eki18wo</td>
+                                    <td class="py-4 px-4">Dsn. Jipangulu</td>
+                                    <td class="py-4 px-4">Ngelo, Kecamatan Margomulyo</td>
+                                    <td class="py-4 px-4">Bojonegoro</td>
+                                    <td class="py-4 px-4">085748523588</td>
+                                    <td class="py-4 px-4">-7.250727,111.454643</td>
+                                    <td class="py-4 px-4">21/09/2018</td>
+                                    <td class="py-4 px-4">Pemula</td>
+                                    <td class="py-4 px-4">188/17/KEP/412.51.23.2002/2018</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Data Anggota Kelompok -->
+                <div class="bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
+                        <i class="fas fa-users text-violet-400"></i>
+                        <span class="font-medium">Data Anggota Kelompok</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-8 text-slate-200 space-y-10">
+
+                        <div>
+                            <strong class="block text-lg mb-3">Poklahsar Bunga Merah (Token: rah12ad)</strong>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Habibah (Habi-11) - Sekretaris - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Jumriyah (Jumr-27) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Amina (Amin-20) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Muminah (Mumi-00) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Mutmaimah (Mutm-28) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Syamsyiah (Syam-08) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Rokidah (Roki-20) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Nor Arofah (Nor -56) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Sainab (Sain-39) - Anggota - Klampis Timur</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Ida Susanti (Ida -46) - Bendahara - Klampis Timur</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong class="block text-lg mb-3">Poklahsar Srikandi (Token: di 19S)</strong>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Yanti (Yant-17) - Sekretaris - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Juliasih (Juli-30) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Cucu R (Cucu-20) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Neneng (Nene-38) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Titi M (Titi-14) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Partini (Part-28) - Anggota - Desa Puuhopa (Phuuhopa)</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Rohma (Rohm-16) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Cici (Cici-53) - Anggota - Desa Puuhopa</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Ira Yusnita (Ira -37) - Bendahara - Desa Puuhopa</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong class="block text-lg mb-3">Poklahsar Waroh (Token: roh16h)</strong>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Suryati (Sury-33) - Sekretaris - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Fatmawati (Fatm-51) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Saeraah (Saer-32) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Seniah (Seni-58) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Habibbahurripa'ah (Habi-25) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Ani Maya Sopa (Ani -20) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Indayani (Inda-30) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Ani (Ani-48) - Anggota - Petak</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Ria Hartini (Ria -20) - Bendahara - Petak</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <strong class="block text-lg mb-3">Poklahsar Sumber Rejeki (Token: eki18wo)</strong>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Wiwin Sunarti (Wiwi-04) - Sekretaris - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Semiati (Semi-48) - Anggota - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Warti A (Wart-12) - Anggota - Ngelo</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Sariyah (Sari-23) - Anggota - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Jirah (Jira-53) - Anggota - Ngelo</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Sri Sumari (Sri -36) - Anggota - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Supinah (Supi-13) - Anggota - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Warti B (Wart-33) - Anggota - Ngelo</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Sulasri (Sula-21) - Anggota - Jipanghulu</div>
+                                <div class="bg-slate-700/50 p-4 rounded-xl">Kartini (Kart-42) - Bendahara - Jipanghulu</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Data Komoditas Perikanan -->
+                <div class="bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
+                        <i class="fas fa-fish text-cyan-400"></i>
+                        <span class="font-medium">Data Komoditas Perikanan</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-8 text-slate-200 space-y-8">
+                        <div>
+                            <strong>Poklahsar Bunga Merah</strong><br>
+                            Jenis Komoditas 1: Udang<br>
+                            Jenis Komoditas 2: Ikan Laut
+                        </div>
+                        <div>
+                            <strong>Poklahsar Srikandi</strong><br>
+                            Jenis Komoditas 1: Belut
+                        </div>
+                        <div>
+                            <strong>Poklahsar Sumber Rejeki</strong><br>
+                            Jenis Komoditas 1: Ikan Jendil<br>
+                            Jenis Komoditas 2: Ikan Wader<br>
+                            Jenis Komoditas 3: Ikan Patin<br>
+                            Jenis Komoditas 4: Ikan Bader<br>
+                            Jenis Komoditas 5: Ikan Tawes
+                        </div>
+                        <div>
+                            <strong>Poklahsar Waroh</strong><br>
+                            Jenis Komoditas 1: Rumput Laut
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Hasil Data Kelompok -->
+                <div class="bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
+                        <i class="fas fa-chart-bar text-emerald-400"></i>
+                        <span class="font-medium">Hasil Data Kelompok</span>
+                    </button>
+                    <div class="accordion-content px-6 pb-8 text-slate-200">
+                        <p>Data lengkap kelompok Poklahsar telah berhasil dikumpulkan dari keempat sumber Google Spreadsheet dan disajikan secara lengkap tanpa pemotongan di website ini.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <h3>Poklahsar Waroh</h3>
-        <div class="komoditas">
-            <p><strong>Jenis Komoditas 1:</strong> Rumput Laut</p>
+        <!-- WEBSITE BUTTON -->
+        <div class="mt-8">
+            <button onclick="alert('Anda sudah berada di Website Kelompok 3 POKLAHSAR')" 
+                    class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 py-5 rounded-3xl font-semibold text-lg flex items-center justify-center gap-3">
+                <i class="fas fa-globe"></i>
+                Website Kelompok 3 POKLAHSAR
+            </button>
+        </div>
+
+        <!-- INFORMASI -->
+        <div class="mt-10 bg-slate-800/70 rounded-3xl p-6 text-sm">
+            <div class="flex items-start gap-3">
+                <i class="fas fa-info-circle text-cyan-400 mt-1"></i>
+                <div>
+                    <strong>Informasi</strong><br>
+                    Website ini dibuat sebagai media penyajian Tugas Akhir Sistem Informasi Manajemen Perikanan yang memuat data kelompok POKLAHSAR dan pengelolaan iuran kelompok secara terintegrasi.
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="text-center text-xs text-slate-400 mt-12">
+            © 2026 Sistem Informasi Manajemen Perikanan<br>
+            Tiaraisya Akbar | Kelompok 3 POKLAHSAR
         </div>
     </div>
 
-    <footer style="text-align: center; margin-top: 50px; color: #666;">
-        <p>Data ini telah dijabarkan secara lengkap tanpa pemotongan dan tanpa link. Siap digunakan sebagai index.html di GitHub.</p>
-    </footer>
+    <script>
+        function toggleSection(btn) {
+            const content = btn.parentElement.querySelector('.accordion-content');
+            content.classList.toggle('open');
+        }
+
+        function toggleSub(btn) {
+            const content = btn.nextElementSibling;
+            content.classList.toggle('open');
+        }
+    </script>
 
 </body>
 </html>
