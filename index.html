@@ -292,4 +292,70 @@
                         <tr><th>Nama Poklahsar</th><th>Komoditas 1</th><th>Komoditas 2</th><th>Komoditas 3</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Poklahsar Bunga Merah</td>
+                        <tr><td>Poklahsar Bunga Merah</td><td>Udang</td><td>Ikan Laut</td><td>-</td></tr>
+                        <tr><td>Poklahsar Srikandi</td><td>Belut</td><td>-</td><td>-</td></tr>
+                        <tr><td>Poklahsar Sumber Rejeki</td><td>Ikan Jendil</td><td>Ikan Wader</td><td>Ikan Patin</td></tr>
+                        <tr><td>Poklahsar Waroh</td><td>Rumput Laut</td><td>-</td><td>-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Data Kelompok & Rencana Usaha Bersama <span class="arrow">▼</span></div>
+            <div id="rencana-usaha-content" class="content-container">
+                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok & Rencana Usaha Bersama</h3>
+                <table>
+                    <thead>
+                        <tr><th>Nama Poklahsar</th><th>Token</th><th>Alamat Kelompok</th><th>Komoditas Utama</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Poklahsar Bunga Merah</td><td>rah12ad</td><td>Bangkalan</td><td>Udang</td></tr>
+                        <tr><td>Srikandi</td><td>di 19S</td><td>Konawe</td><td>Belut</td></tr>
+                        <tr><td>Waroh</td><td>roh16h</td><td>Lombok Barat</td><td>Rumput Laut</td></tr>
+                        <tr><td>Sumber Rejeki</td><td>eki18wo</td><td>Bojonegoro</td><td>Ikan Jendil & Patin</td></tr>
+                    </tbody>
+                </table>
+                
+                <a href="https://herny-noor-aziziah.github.io/HERNYBARUUUU/" target="_blank" class="website-btn">
+                    <div class="btn-left-content">
+                        <span class="btn-icon-globe">🌐</span>
+                        <div class="btn-text">
+                            <span>WEBSITE KELOMPOK 3</span>
+                            <span>POKLAHSAR</span>
+                        </div>
+                    </div>
+                    <span class="btn-icon-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Sistem Informasi Manajemen Perikanan</p>
+        <p>Herny Noor Aziziah | Kelompok 3 POKLAHSAR</p>
+    </footer>
+
+    <script>
+        function toggleMenu(menuId, element) {
+            const menu = document.getElementById(menuId);
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+                element.classList.remove("active");
+            } else {
+                document.querySelectorAll('.submenu-container').forEach(m => m.style.display = "none");
+                document.querySelectorAll('.btn-main-menu').forEach(btn => btn.classList.remove("active"));
+                
+                menu.style.display = "flex";
+                element.classList.add("active");
+            }
+        }
+
+        function showOnlyContent(contentId, clickedBtn) {
+            document.querySelectorAll('.content-container').forEach(el => el.style.display = "none");
+            document.querySelectorAll('.btn-sub-menu').forEach(btn => btn.classList.remove("active"));
+           
+            document.getElementById(contentId).style.display = "block";
+            clickedBtn.classList.add("active");
+        }
+    </script>
+</body>
+</html>
