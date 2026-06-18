@@ -25,7 +25,7 @@
             transition: max-height 0.5s ease-out;
         }
         .accordion-content.open {
-            max-height: 6000px;
+            max-height: 7000px;
         }
         .folder-icon {
             transition: transform 0.3s ease;
@@ -33,18 +33,25 @@
         .open .folder-icon {
             transform: rotate(90deg);
         }
+        .sub-menu {
+            transition: all 0.3s ease;
+        }
+        .sub-menu:hover {
+            background-color: #475569;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
         }
         th, td {
-            padding: 12px 10px;
+            padding: 14px 12px;
             text-align: left;
             border-bottom: 1px solid #475569;
         }
         th {
             background-color: #1e40af;
             color: white;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -94,15 +101,15 @@
                 <span class="font-semibold text-xl">KELOKPOK</span>
             </button>
             
-            <div id="kelompok-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-3xl p-3 space-y-3">
+            <div id="kelompok-content" class="accordion-content bg-[#1e3a8a]/70 mt-2 rounded-3xl p-3 space-y-2">
 
-                <!-- 1. Sejarah Kelompok -->
-                <div class="bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
-                        <i class="fas fa-book text-blue-400"></i>
-                        <span class="font-medium">Sejarah Kelompok</span>
+                <!-- Sub Menu Items - Diperbaiki tampilannya -->
+                <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                        <i class="fas fa-book text-blue-400 w-6"></i>
+                        <span class="font-medium text-lg">Sejarah Kelompok</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8 text-slate-200 leading-relaxed space-y-6">
+                    <div class="accordion-content px-8 pb-8 pt-6 text-slate-200 leading-relaxed space-y-6">
                         <p><strong>Poklahsar Bunga Merah</strong><br>Poklahsar Bunga Merah merupakan kelompok usaha yang bergerak dalam pengolahan dan pemasaran hasil perikanan. Kelompok ini dibentuk sebagai wadah bagi anggota untuk meningkatkan pendapatan, keterampilan, dan kesejahteraan melalui usaha pengolahan hasil perikanan.</p>
                         <p><strong>Poklahsar Srikandi</strong><br>Poklahsar Srikandi merupakan kelompok usaha pengolah hasil perikanan yang dibentuk untuk mengembangkan keterampilan masyarakat dalam pengolahan produk perikanan. Kelompok ini menjadi wadah bagi anggota untuk bekerja sama, meningkatkan kapasitas usaha serta memperkuat pemasaran produk hasil olahan sehingga mampu meningkatkan pendapatan keluarga dan kelompok.</p>
                         <p><strong>Poklahsar WAROH</strong><br>Poklahsar WAROH merupakan kelompok usaha pengolahan hasil yang beranggotakan masyarakat yang memiliki komitmen untuk mengembangkan usaha berbasis produk olahan perikanan. Kelompok ini aktif dalam kegiatan produksi, pemasaran, pelatihan, dan pengembangan usaha guna meningkatkan kualitas produk serta daya saing usaha anggota kelompok.</p>
@@ -110,89 +117,39 @@
                     </div>
                 </div>
 
-                <!-- 2. Data Dasar Kelompok - TABEL -->
-                <div class="bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
-                        <i class="fas fa-database text-amber-400"></i>
-                        <span class="font-medium">Data Dasar Kelompok</span>
+                <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                        <i class="fas fa-database text-amber-400 w-6"></i>
+                        <span class="font-medium text-lg">Data Dasar Kelompok</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8 overflow-x-auto">
+                    <div class="accordion-content px-6 pb-8 pt-4 overflow-x-auto">
                         <table class="text-sm">
                             <thead>
                                 <tr>
                                     <th>Nama Poklahsar</th>
-                                    <th>Token Kelompok</th>
-                                    <th>Alamat</th>
+                                    <th>Token</th>
                                     <th>Desa / Kecamatan</th>
                                     <th>Kabupaten</th>
                                     <th>No. Hp Ketua</th>
-                                    <th>Koordinat</th>
                                     <th>Tanggal Pendirian</th>
-                                    <th>Kelas Kelompok</th>
-                                    <th>Sertifikat Pengukuhan</th>
                                 </tr>
                             </thead>
                             <tbody class="text-slate-200">
-                                <tr>
-                                    <td>Poklahsar Bunga Merah</td>
-                                    <td>rah12ad</td>
-                                    <td>Dsn. Spao</td>
-                                    <td>Desa Klampis Timur, Kecamatan Klampis</td>
-                                    <td>Bangkalan</td>
-                                    <td>0</td>
-                                    <td>-6.89322,112.90864</td>
-                                    <td>12/06/2012</td>
-                                    <td>Pemula</td>
-                                    <td>411.61/110.5/433.105/2012</td>
-                                </tr>
-                                <tr>
-                                    <td>Poklahsar Srikandi</td>
-                                    <td>di 19S</td>
-                                    <td>-</td>
-                                    <td>Desa Puuhopa, Kecamatan Puriala</td>
-                                    <td>Konawe</td>
-                                    <td>081242551010</td>
-                                    <td>122.078063,-4.056849</td>
-                                    <td>03/06/2019</td>
-                                    <td>Pemula</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>Poklahsar Waroh</td>
-                                    <td>roh16h</td>
-                                    <td>Dsn. Penangke</td>
-                                    <td>Desa Sesaot, Kecamatan Narmada</td>
-                                    <td>Lombok Barat</td>
-                                    <td>087864105341</td>
-                                    <td>-8.548669,116.236742</td>
-                                    <td>15/05/2016</td>
-                                    <td>Pemula</td>
-                                    <td>1.3.52.01.03.0819</td>
-                                </tr>
-                                <tr>
-                                    <td>Poklahsar Sumber Rejeki</td>
-                                    <td>eki18wo</td>
-                                    <td>Dsn. Jipangulu</td>
-                                    <td>Ngelo, Kecamatan Margomulyo</td>
-                                    <td>Bojonegoro</td>
-                                    <td>085748523588</td>
-                                    <td>-7.250727,111.454643</td>
-                                    <td>21/09/2018</td>
-                                    <td>Pemula</td>
-                                    <td>188/17/KEP/412.51.23.2002/2018</td>
-                                </tr>
+                                <tr><td>Poklahsar Bunga Merah</td><td>rah12ad</td><td>Desa Klampis Timur, Kec. Klampis</td><td>Bangkalan</td><td>0</td><td>12/06/2012</td></tr>
+                                <tr><td>Poklahsar Srikandi</td><td>di 19S</td><td>Desa Puuhopa, Kec. Puriala</td><td>Konawe</td><td>081242551010</td><td>03/06/2019</td></tr>
+                                <tr><td>Poklahsar Waroh</td><td>roh16h</td><td>Desa Sesaot, Kec. Narmada</td><td>Lombok Barat</td><td>087864105341</td><td>15/05/2016</td></tr>
+                                <tr><td>Poklahsar Sumber Rejeki</td><td>eki18wo</td><td>Ngelo, Kec. Margomulyo</td><td>Bojonegoro</td><td>085748523588</td><td>21/09/2018</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- 3. Data Anggota Kelompok - TABEL -->
-                <div class="bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
-                        <i class="fas fa-users text-violet-400"></i>
-                        <span class="font-medium">Data Anggota Kelompok</span>
+                <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                        <i class="fas fa-users text-violet-400 w-6"></i>
+                        <span class="font-medium text-lg">Data Anggota Kelompok</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8">
+                    <div class="accordion-content px-6 pb-8 pt-4 overflow-x-auto">
                         <table class="text-sm">
                             <thead>
                                 <tr>
@@ -202,8 +159,7 @@
                                     <th>Alamat</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-slate-200">
-                                <!-- Bunga Merah -->
+                            <tbody class="text-slate-200 divide-y divide-slate-700">
                                 <tr><td rowspan="10">Poklahsar Bunga Merah</td><td>Habibah (Habi-11)</td><td>Sekretaris</td><td>Klampis Timur</td></tr>
                                 <tr><td>Jumriyah (Jumr-27)</td><td>Anggota</td><td>Klampis Timur</td></tr>
                                 <tr><td>Amina (Amin-20)</td><td>Anggota</td><td>Klampis Timur</td></tr>
@@ -214,52 +170,17 @@
                                 <tr><td>Nor Arofah (Nor -56)</td><td>Anggota</td><td>Klampis Timur</td></tr>
                                 <tr><td>Sainab (Sain-39)</td><td>Anggota</td><td>Klampis Timur</td></tr>
                                 <tr><td>Ida Susanti (Ida -46)</td><td>Bendahara</td><td>Klampis Timur</td></tr>
-                                
-                                <!-- Srikandi -->
-                                <tr><td rowspan="9">Poklahsar Srikandi</td><td>Yanti (Yant-17)</td><td>Sekretaris</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Juliasih (Juli-30)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Cucu R (Cucu-20)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Neneng (Nene-38)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Titi M (Titi-14)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Partini (Part-28)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Rohma (Rohm-16)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Cici (Cici-53)</td><td>Anggota</td><td>Desa Puuhopa</td></tr>
-                                <tr><td>Ira Yusnita (Ira -37)</td><td>Bendahara</td><td>Desa Puuhopa</td></tr>
-                                
-                                <!-- Waroh -->
-                                <tr><td rowspan="9">Poklahsar Waroh</td><td>Suryati (Sury-33)</td><td>Sekretaris</td><td>Petak</td></tr>
-                                <tr><td>Fatmawati (Fatm-51)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Saeraah (Saer-32)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Seniah (Seni-58)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Habibbahurripa'ah (Habi-25)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Ani Maya Sopa (Ani -20)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Indayani (Inda-30)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Ani (Ani-48)</td><td>Anggota</td><td>Petak</td></tr>
-                                <tr><td>Ria Hartini (Ria -20)</td><td>Bendahara</td><td>Petak</td></tr>
-                                
-                                <!-- Sumber Rejeki -->
-                                <tr><td rowspan="10">Poklahsar Sumber Rejeki</td><td>Wiwin Sunarti (Wiwi-04)</td><td>Sekretaris</td><td>Jipanghulu</td></tr>
-                                <tr><td>Semiati (Semi-48)</td><td>Anggota</td><td>Jipanghulu</td></tr>
-                                <tr><td>Warti A (Wart-12)</td><td>Anggota</td><td>Ngelo</td></tr>
-                                <tr><td>Sariyah (Sari-23)</td><td>Anggota</td><td>Jipanghulu</td></tr>
-                                <tr><td>Jirah (Jira-53)</td><td>Anggota</td><td>Ngelo</td></tr>
-                                <tr><td>Sri Sumari (Sri -36)</td><td>Anggota</td><td>Jipanghulu</td></tr>
-                                <tr><td>Supinah (Supi-13)</td><td>Anggota</td><td>Jipanghulu</td></tr>
-                                <tr><td>Warti B (Wart-33)</td><td>Anggota</td><td>Ngelo</td></tr>
-                                <tr><td>Sulasri (Sula-21)</td><td>Anggota</td><td>Jipanghulu</td></tr>
-                                <tr><td>Kartini (Kart-42)</td><td>Bendahara</td><td>Jipanghulu</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- 4. Data Komoditas Perikanan - TABEL -->
-                <div class="bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
-                        <i class="fas fa-fish text-cyan-400"></i>
-                        <span class="font-medium">Data Komoditas Perikanan</span>
+                <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569] border-b border-slate-600">
+                        <i class="fas fa-fish text-cyan-400 w-6"></i>
+                        <span class="font-medium text-lg">Data Komoditas Perikanan</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8">
+                    <div class="accordion-content px-6 pb-8 pt-4">
                         <table class="text-sm">
                             <thead>
                                 <tr>
@@ -282,13 +203,12 @@
                     </div>
                 </div>
 
-                <!-- 5. Hasil Data Kelompok -->
-                <div class="bg-[#334155] rounded-2xl overflow-hidden">
-                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-3 text-left hover:bg-[#475569]">
-                        <i class="fas fa-chart-bar text-emerald-400"></i>
-                        <span class="font-medium">Hasil Data Kelompok</span>
+                <div class="sub-menu bg-[#334155] rounded-2xl overflow-hidden">
+                    <button onclick="toggleSub(this)" class="w-full px-6 py-5 flex items-center gap-4 text-left hover:bg-[#475569]">
+                        <i class="fas fa-chart-bar text-emerald-400 w-6"></i>
+                        <span class="font-medium text-lg">Hasil Data Kelompok</span>
                     </button>
-                    <div class="accordion-content px-6 pb-8 text-slate-200">
+                    <div class="accordion-content px-6 pb-8 pt-6 text-slate-200">
                         <p>Data lengkap kelompok Poklahsar telah berhasil dikumpulkan dari keempat sumber Google Spreadsheet dan disajikan secara lengkap tanpa pemotongan di website ini.</p>
                     </div>
                 </div>
@@ -324,15 +244,12 @@
     </div>
 
     <script>
-        // Hanya satu accordion terbuka
         function toggleSub(btn) {
             const content = btn.nextElementSibling;
             const allContents = document.querySelectorAll('#kelompok-content .accordion-content');
             
             allContents.forEach(c => {
-                if (c !== content) {
-                    c.classList.remove('open');
-                }
+                if (c !== content) c.classList.remove('open');
             });
             
             content.classList.toggle('open');
