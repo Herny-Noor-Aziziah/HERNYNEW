@@ -3,272 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Akhir - Kelompok 3 POKLAHSAR</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <title>Data Kelompok Poklahsar - Pengolah Hasil Perikanan</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 50%, #4a5568 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            padding: 40px 20px;
-        }
-
-        /* ================= HEADER ================= */
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .header h2 {
-            color: #ffeb3b;
-            font-size: 22px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .header p {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .btn-kembali {
-            background: white;
-            color: #1e3c72;
-            padding: 8px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-kembali:hover {
-            background: #f0f4ff;
-            transform: translateY(-1px);
-        }
-
-        /* ================= MAIN CONTAINER ================= */
-        .container {
-            width: 100%;
-            max-width: 850px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* Block Section Utama */
-        .section-block {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Label Kategori (INDIVIDU & KELOMPOK) */
-        .category-title {
-            background: rgba(255, 255, 255, 0.12);
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .category-title.main-title {
-            margin-bottom: 0;
-        }
-
-        /* Menu List Item / Tombol Link */
-        .menu-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .menu-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .menu-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            padding-left: 25px;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Tombol Spesifik Website Kelompok (Warna Khasiat Olive/Gold Muda) */
-        .btn-website {
-            background: rgba(143, 155, 119, 0.4);
-            border: 1px solid rgba(235, 254, 197, 0.4);
-            justify-content: center;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-        
-        .btn-website:hover {
-            background: rgba(143, 155, 119, 0.6);
-            padding-left: 20px; /* Tetap di tengah */
-        }
-
-        /* ================= KOTAK INFORMASI ================= */
-        .info-block {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        .info-title {
-            color: #ffeb3b;
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .info-text {
-            font-size: 13.5px;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
-            opacity: 0.9;
-            text-align: justify;
         }
-
-        /* ================= FOOTER ================= */
-        .footer {
-            margin-top: auto;
-            padding-top: 40px;
+        h1 {
             text-align: center;
-            font-size: 12px;
-            opacity: 0.7;
-            line-height: 1.5;
+            color: #1e3a8a;
         }
-
-        /* Responsive design */
-        @media (max-width: 600px) {
-            body { padding: 20px 10px; }
-            .header h1 { font-size: 24px; }
-            .header h2 { font-size: 18px; }
-            .info-block { padding: 15px; }
+        h2 {
+            color: #1e40af;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #2563eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #64748b;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #1e40af;
+            color: white;
+        }
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .komoditas {
+            margin-top: 15px;
+        }
+        ul {
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>📚 Tugas Akhir</h1>
-        <h2>Kelompok 3 POKLAHSAR</h2>
-        <p>Sistem Informasi Manajemen Perikanan</p>
-        <button onclick="window.history.back()" class="btn-kembali">
-            <i class="fas fa-arrow-left"></i> Kembali
-        </button>
+    <h1>Data Kelompok Poklahsar Pengolah Hasil Perikanan</h1>
+    <p style="text-align: center; font-style: italic;">Data lengkap dari semua kelompok yang telah dijabarkan secara rinci tanpa pemotongan</p>
+
+    <!-- SEJARAH KELOMPOK -->
+    <div class="section">
+        <h2>1. Sejarah Kelompok</h2>
+        
+        <h3>Poklahsar Bunga Merah</h3>
+        <p>Poklahsar Bunga Merah merupakan kelompok usaha yang bergerak dalam pengolahan dan pemasaran hasil perikanan. Kelompok ini dibentuk sebagai wadah bagi anggota untuk meningkatkan pendapatan, keterampilan, dan kesejahteraan melalui usaha pengolahan hasil perikanan.</p>
+        
+        <h3>Poklahsar Srikandi</h3>
+        <p>Poklahsar Srikandi merupakan kelompok usaha pengolah hasil perikanan yang dibentuk untuk mengembangkan keterampilan masyarakat dalam pengolahan produk perikanan. Kelompok ini menjadi wadah bagi anggota untuk bekerja sama, meningkatkan kapasitas usaha serta memperkuat pemasaran produk hasil olahan sehingga mampu meningkatkan pendapatan keluarga dan kelompok.</p>
+        
+        <h3>Poklahsar WAROH</h3>
+        <p>Poklahsar WAROH merupakan kelompok usaha pengolahan hasil yang beranggotakan masyarakat yang memiliki komitmen untuk mengembangkan usaha berbasis produk olahan perikanan. Kelompok ini aktif dalam kegiatan produksi, pemasaran, pelatihan, dan pengembangan usaha guna meningkatkan kualitas produk serta daya saing usaha anggota kelompok.</p>
+        
+        <h3>Poklahsar Sumber Rejeki</h3>
+        <p>Poklahsar Sumber Rejeki dibentuk sebagai sarana pengembangan usaha pengolahan dan pemasaran hasil perikanan yang berbasis pada potensi sumber daya lokal. Melalui kegiatan kelompok, anggota dapat mengembangkan usaha secara bersama-sama, meningkatkan mutu produk, dan memperluas akses pasar untuk meningkatkan kesejahteraan anggota.</p>
     </div>
 
-    <div class="container">
-
-        <div class="section-block">
-            <div class="category-title main-title">
-                <i class="fas fa-folder"></i> INDIVIDU
-            </div>
-            <div class="menu-list">
-                <a href="#" class="menu-item">
-                    <i class="fas fa-coins" style="color: #ffb300;"></i> Iuran Kelompok
-                </a>
-            </div>
-        </div>
-
-        <div class="section-block">
-            <div class="category-title">
-                <i class="fas fa-folder"></i> KELOMPOK
-            </div>
-            
-            <div class="menu-list">
-                <a href="https://docs.google.com/spreadsheets/d/1QFjZ0pLQoNAniymWxwxOfYw2_J6z-7YmIlOgrnpuyRw/edit?usp=sharing" target="_blank" class="menu-item">
-                    <i class="fas fa-book" style="color: #e3f2fd;"></i> Sejarah Kelompok
-                </a>
-
-                <a href="https://docs.google.com/spreadsheets/d/1fpfENk1sUgzKDmSeBWTzPMrBzOJ-n2nP9RVYVieTQZo/edit?usp=sharing" target="_blank" class="menu-item">
-                    <i class="fas fa-paste" style="color: #ffcdd2;"></i> Data Dasar Kelompok
-                </a>
-
-                <a href="https://docs.google.com/spreadsheets/d/1HN_755mmQQVjFg6XmzhN9Q_kdyLPcGCITDP8NiFmp1I/edit?usp=sharing" target="_blank" class="menu-item">
-                    <i class="fas fa-users" style="color: #ce93d8;"></i> Data Anggota Kelompok
-                </a>
-
-                <a href="https://docs.google.com/spreadsheets/d/15PHU5mdx6Z1io8OL32c-QDuni7qLjHGkbHuoMjDX_kE/edit?usp=sharing" target="_blank" class="menu-item">
-                    <i class="fas fa-fish" style="color: #81d4fa;"></i> Data Komoditas Perikanan
-                </a>
-
-                <a href="https://github.com" target="_blank" class="menu-item">
-                    <i class="fab fa-github" style="color: #ffffff;"></i> Hasil Data Kelompok
-                </a>
-
-                <a href="#" class="menu-item btn-website">
-                    <i class="fas fa-globe"></i> Website Kelompok 3 POKLAHSAR
-                </a>
-            </div>
-        </div>
-
-        <div class="info-block">
-            <div class="info-title">
-                <i class="fas fa-info-circle"></i> Informasi
-            </div>
-            <div class="info-text">
-                Website ini dibuat sebagai media penyajian Tugas Akhir Sistem Informasi Manajemen Perikanan yang memuat data kelompok POKLAHSAR dan pengelolaan iuran kelompok secara terintegrasi.
-            </div>
-        </div>
-
+    <!-- DATA DASAR KELOMPOK -->
+    <div class="section">
+        <h2>2. Data Dasar Kelompok</h2>
+        
+        <table>
+            <tr>
+                <th>Nama Poklahsar</th>
+                <th>Token Kelompok</th>
+                <th>Alamat</th>
+                <th>Desa/Kecamatan</th>
+                <th>Kabupaten</th>
+                <th>No. Hp Ketua</th>
+                <th>Koordinat</th>
+                <th>Tanggal Pendirian</th>
+                <th>Kelas Kelompok</th>
+                <th>Sertifikat Pengukuhan</th>
+            </tr>
+            <tr>
+                <td>Poklahsar Bunga Merah</td>
+                <td>rah12ad</td>
+                <td>Dsn. Spao</td>
+                <td>Desa Klampis Timur, Kecamatan Klampis</td>
+                <td>Bangkalan</td>
+                <td>0</td>
+                <td>-6.89322,112.90864</td>
+                <td>12/06/2012</td>
+                <td>Pemula</td>
+                <td>411.61/110.5/433.105/2012</td>
+            </tr>
+            <tr>
+                <td>Poklahsar Srikandi</td>
+                <td>di 19S</td>
+                <td>-</td>
+                <td>Desa Puuhopa, Kecamatan Puriala</td>
+                <td>Konawe</td>
+                <td>081242551010</td>
+                <td>122.078063,-4.056849</td>
+                <td>03/06/2019</td>
+                <td>Pemula</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Poklahsar Waroh</td>
+                <td>roh16h</td>
+                <td>Dsn. Penangke</td>
+                <td>Desa Sesaot, Kecamatan Narmada</td>
+                <td>Lombok Barat</td>
+                <td>087864105341</td>
+                <td>-8.548669,116.236742</td>
+                <td>15/05/2016</td>
+                <td>Pemula</td>
+                <td>1.3.52.01.03.0819</td>
+            </tr>
+            <tr>
+                <td>Poklahsar Sumber Rejeki</td>
+                <td>eki18wo</td>
+                <td>Dsn. Jipangulu</td>
+                <td>Ngelo, Kecamatan Margomulyo</td>
+                <td>Bojonegoro</td>
+                <td>085748523588</td>
+                <td>-7.250727,111.454643</td>
+                <td>21/09/2018</td>
+                <td>Pemula</td>
+                <td>188/17/KEP/412.51.23.2002/2018</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="footer">
-        © 2026 Sistem Informasi Manajemen Perikanan<br>
-        Tiaraisya Akbar | Kelompok 3 POKLAHSAR
+    <!-- DATA ANGGOTA KELOMPOK -->
+    <div class="section">
+        <h2>3. Data Anggota Kelompok</h2>
+        
+        <h3>Poklahsar Bunga Merah (Token: rah12ad)</h3>
+        <ul>
+            <li>Habibah (Habi-11) - Sekretaris - Klampis Timur</li>
+            <li>Jumriyah (Jumr-27) - Anggota - Klampis Timur</li>
+            <li>Amina (Amin-20) - Anggota - Klampis Timur</li>
+            <li>Muminah (Mumi-00) - Anggota - Klampis Timur</li>
+            <li>Mutmaimah (Mutm-28) - Anggota - Klampis Timur</li>
+            <li>Syamsyiah (Syam-08) - Anggota - Klampis Timur</li>
+            <li>Rokidah (Roki-20) - Anggota - Klampis Timur</li>
+            <li>Nor Arofah (Nor -56) - Anggota - Klampis Timur</li>
+            <li>Sainab (Sain-39) - Anggota - Klampis Timur</li>
+            <li>Ida Susanti (Ida -46) - Bendahara - Klampis Timur</li>
+        </ul>
+
+        <h3>Poklahsar Srikandi (Token: di 19S)</h3>
+        <ul>
+            <li>Yanti (Yant-17) - Sekretaris - Desa Puuhopa</li>
+            <li>Juliasih (Juli-30) - Anggota - Desa Puuhopa</li>
+            <li>Cucu R (Cucu-20) - Anggota - Desa Puuhopa</li>
+            <li>Neneng (Nene-38) - Anggota - Desa Puuhopa</li>
+            <li>Titi M (Titi-14) - Anggota - Desa Puuhopa</li>
+            <li>Partini (Part-28) - Anggota - Desa Puuhopa (Phuuhopa)</li>
+            <li>Rohma (Rohm-16) - Anggota - Desa Puuhopa</li>
+            <li>Cici (Cici-53) - Anggota - Desa Puuhopa</li>
+            <li>Ira Yusnita (Ira -37) - Bendahara - Desa Puuhopa</li>
+        </ul>
+
+        <h3>Poklahsar Waroh (Token: roh16h)</h3>
+        <ul>
+            <li>Suryati (Sury-33) - Sekretaris - Petak</li>
+            <li>Fatmawati (Fatm-51) - Anggota - Petak</li>
+            <li>Saeraah (Saer-32) - Anggota - Petak</li>
+            <li>Seniah (Seni-58) - Anggota - Petak</li>
+            <li>Habibbahurripa'ah (Habi-25) - Anggota - Petak</li>
+            <li>Ani Maya Sopa (Ani -20) - Anggota - Petak</li>
+            <li>Indayani (Inda-30) - Anggota - Petak</li>
+            <li>Ani (Ani-48) - Anggota - Petak</li>
+            <li>Ria Hartini (Ria -20) - Bendahara - Petak</li>
+        </ul>
+
+        <h3>Poklahsar Sumber Rejeki (Token: eki18wo)</h3>
+        <ul>
+            <li>Wiwin Sunarti (Wiwi-04) - Sekretaris - Jipanghulu</li>
+            <li>Semiati (Semi-48) - Anggota - Jipanghulu</li>
+            <li>Warti A (Wart-12) - Anggota - Ngelo</li>
+            <li>Sariyah (Sari-23) - Anggota - Jipanghulu</li>
+            <li>Jirah (Jira-53) - Anggota - Ngelo</li>
+            <li>Sri Sumari (Sri -36) - Anggota - Jipanghulu</li>
+            <li>Supinah (Supi-13) - Anggota - Jipanghulu</li>
+            <li>Warti B (Wart-33) - Anggota - Ngelo</li>
+            <li>Sulasri (Sula-21) - Anggota - Jipanghulu</li>
+            <li>Kartini (Kart-42) - Bendahara - Jipanghulu</li>
+        </ul>
     </div>
+
+    <!-- DATA KOMODITAS PERIKANAN -->
+    <div class="section">
+        <h2>4. Data Komoditas Perikanan</h2>
+        
+        <h3>Poklahsar Bunga Merah</h3>
+        <div class="komoditas">
+            <p><strong>Jenis Komoditas 1:</strong> Udang</p>
+            <p><strong>Jenis Komoditas 2:</strong> Ikan Laut</p>
+        </div>
+
+        <h3>Poklahsar Srikandi</h3>
+        <div class="komoditas">
+            <p><strong>Jenis Komoditas 1:</strong> Belut</p>
+        </div>
+
+        <h3>Poklahsar Sumber Rejeki</h3>
+        <div class="komoditas">
+            <p><strong>Jenis Komoditas 1:</strong> Ikan Jendil</p>
+            <p><strong>Jenis Komoditas 2:</strong> Ikan Wader</p>
+            <p><strong>Jenis Komoditas 3:</strong> Ikan Patin</p>
+            <p><strong>Jenis Komoditas 4:</strong> Ikan Bader</p>
+            <p><strong>Jenis Komoditas 5:</strong> Ikan Tawes</p>
+        </div>
+
+        <h3>Poklahsar Waroh</h3>
+        <div class="komoditas">
+            <p><strong>Jenis Komoditas 1:</strong> Rumput Laut</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px; color: #666;">
+        <p>Data ini telah dijabarkan secara lengkap tanpa pemotongan dan tanpa link. Siap digunakan sebagai index.html di GitHub.</p>
+    </footer>
 
 </body>
 </html>
