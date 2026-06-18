@@ -81,30 +81,49 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
         }
+
+        /* PERBAIKAN: CSS TOMBOL SESUAI SCREENSHOT */
         .website-btn {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: linear-gradient(to right, #10b981, #34d399);
-            color: white;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 1rem 1.5rem;
-            margin-top: 1rem;
+            justify-content: space-between;
+            background: rgba(16, 185, 129, 0.1);
+            backdrop-filter: blur(12px);
+            border: 2px solid #10b981;
+            border-radius: 24px;
+            padding: 1.5rem 2rem;
+            margin-top: 1.5rem;
             width: 100%;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            color: #10b981;
             transition: all 0.3s ease;
         }
-        .website-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
-            filter: brightness(1.1);
+        .btn-left-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+        .btn-icon-globe {
+            font-size: 1.8rem;
+        }
+        .btn-icon-arrow {
+            font-size: 1.6rem;
+        }
+        .website-btn:hover {
+            background: rgba(16, 185, 129, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+
         .arrow { 
             transition: transform 0.3s ease; 
             font-size: 1.1rem; 
@@ -168,7 +187,6 @@
             <div class="subtitle-main">Sistem Informasi Manajemen Perikanan</div>
         </header>
 
-        <!-- INDIVIDU -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-individu', this)">
             <span>📁 INDIVIDU</span>
             <span class="arrow">▼</span>
@@ -180,7 +198,6 @@
             </a>
         </div>
 
-        <!-- KELOMPOK -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-kelompok', this)">
             <span>📁 KELOMPOK</span>
             <span class="arrow">▼</span>
@@ -275,64 +292,4 @@
                         <tr><th>Nama Poklahsar</th><th>Komoditas 1</th><th>Komoditas 2</th><th>Komoditas 3</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Poklahsar Bunga Merah</td><td>Udang</td><td>Ikan Laut</td><td>-</td></tr>
-                        <tr><td>Poklahsar Srikandi</td><td>Belut</td><td>-</td><td>-</td></tr>
-                        <tr><td>Poklahsar Sumber Rejeki</td><td>Ikan Jendil</td><td>Ikan Wader</td><td>Ikan Patin</td></tr>
-                        <tr><td>Poklahsar Waroh</td><td>Rumput Laut</td><td>-</td><td>-</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Data Kelompok & Rencana Usaha Bersama <span class="arrow">▼</span></div>
-            <div id="rencana-usaha-content" class="content-container">
-                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok & Rencana Usaha Bersama</h3>
-                <table>
-                    <thead>
-                        <tr><th>Nama Poklahsar</th><th>Token</th><th>Alamat Kelompok</th><th>Komoditas Utama</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Poklahsar Bunga Merah</td><td>rah12ad</td><td>Bangkalan</td><td>Udang</td></tr>
-                        <tr><td>Srikandi</td><td>di 19S</td><td>Konawe</td><td>Belut</td></tr>
-                        <tr><td>Waroh</td><td>roh16h</td><td>Lombok Barat</td><td>Rumput Laut</td></tr>
-                        <tr><td>Sumber Rejeki</td><td>eki18wo</td><td>Bojonegoro</td><td>Ikan Jendil & Patin</td></tr>
-                    </tbody>
-                </table>
-                
-                <!-- TOMBOL WEBSITE KELOMPOK TERPASANG DI BAWAH TABEL -->
-                <a href="https://herny-noor-aziziah.github.io/HERNYBARUUUU/" target="_blank" class="website-btn">
-                    🌐 Website Kelompok 3 POKLAHSAR ↗
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2026 Sistem Informasi Manajemen Perikanan</p>
-        <p>Herny Noor Aziziah | Kelompok 3 POKLAHSAR</p>
-    </footer>
-
-    <script>
-        function toggleMenu(menuId, element) {
-            const menu = document.getElementById(menuId);
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-                element.classList.remove("active");
-            } else {
-                document.querySelectorAll('.submenu-container').forEach(m => m.style.display = "none");
-                document.querySelectorAll('.btn-main-menu').forEach(btn => btn.classList.remove("active"));
-                
-                menu.style.display = "flex";
-                element.classList.add("active");
-            }
-        }
-
-        function showOnlyContent(contentId, clickedBtn) {
-            document.querySelectorAll('.content-container').forEach(el => el.style.display = "none");
-            document.querySelectorAll('.btn-sub-menu').forEach(btn => btn.classList.remove("active"));
-           
-            document.getElementById(contentId).style.display = "block";
-            clickedBtn.classList.add("active");
-        }
-    </script>
-</body>
-</html>
+                        <tr><td>Poklahsar Bunga Merah</td>
