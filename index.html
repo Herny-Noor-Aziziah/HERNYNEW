@@ -81,6 +81,23 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
         }
+        .website-btn {
+            background: linear-gradient(to right, #10b981, #34d399);
+            color: white;
+            font-weight: 700;
+            font-size: 1.15rem;
+            padding: 1.4rem 2rem;
+            text-align: center;
+            border-radius: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+        .website-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4);
+        }
         .arrow { 
             transition: transform 0.3s ease; 
             font-size: 1.1rem; 
@@ -127,12 +144,6 @@
         tr:hover {
             background: rgba(59, 130, 246, 0.2);
         }
-        .info-box {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.6rem;
-        }
         footer { 
             text-align: center; 
             margin-top: auto; 
@@ -150,6 +161,7 @@
             <div class="subtitle-main">Sistem Informasi Manajemen Perikanan</div>
         </header>
 
+        <!-- INDIVIDU -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-individu', this)">
             <span>📁 INDIVIDU</span>
             <span class="arrow">▼</span>
@@ -161,6 +173,7 @@
             </a>
         </div>
 
+        <!-- KELOMPOK -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-kelompok', this)">
             <span>📁 KELOMPOK</span>
             <span class="arrow">▼</span>
@@ -169,7 +182,6 @@
             <div class="btn-sub-menu" onclick="showOnlyContent('sejarah-content', this)">📖 Sejarah Kelompok <span class="arrow">▼</span></div>
             <div id="sejarah-content" class="content-container">
                 <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Sejarah Kelompok</h3>
-                <!-- Isi sejarah tetap sama seperti sebelumnya -->
                 <p><strong>POKHLAHSAR BUNGA MERAH</strong><br><br>
                 Kelompok Pengolah dan Pemasar (POKHLAHSAR) BUNGA MERAH adalah wadah pengolah dan pemasaran terasi udang yang berada di Desa Klampis Timur, Kecamatan Klampis Kabupaten Bangkalan yang dibentuk agar pengolah dan pemasar khususnya anggota kelompok dapat hidup sejahtera dan jauh dari kemiskinan.<br><br>
                 Potensi perikanan di Kecamatan Klampis sangat melimpah untuk dimanfaatkan dengan sebaik-baiknya sebagai hasil olahan. Tentunya membutuhkan penanganan yang serius oleh pengolah itu sendiri dan juga harus didukung oleh semua pihak terutama pemerintah agar potensi yang sangat besar ini dapat bermanfaat bagi masyarakat.<br><br>
@@ -208,7 +220,6 @@
                         <tr><th>Nama</th><th>Jabatan</th><th>Alamat</th><th>Token Kelompok</th></tr>
                     </thead>
                     <tbody>
-                        <!-- Isi tabel anggota tetap sama seperti kode Anda -->
                         <tr><td>Habibah</td><td>Sekretaris</td><td>Klampis Timur</td><td>rah12ad</td></tr>
                         <tr><td>Jumriyah</td><td>Anggota</td><td>Klampis Timur</td><td>rah12ad</td></tr>
                         <tr><td>Amina</td><td>Anggota</td><td>Klampis Timur</td><td>rah12ad</td></tr>
@@ -217,7 +228,34 @@
                         <tr><td>Syamsyiah</td><td>Anggota</td><td>Klampis Timur</td><td>rah12ad</td></tr>
                         <tr><td>Rokidah</td><td>Anggota</td><td>Klampis Timur</td><td>rah12ad</td></tr>
                         <tr><td>Ida Susanti</td><td>Bendahara</td><td>Klampis Timur</td><td>rah12ad</td></tr>
-                        <!-- ... (sisanya sama seperti kode asli Anda) -->
+                        <tr><td>Yanti</td><td>Sekretaris</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Juliasih</td><td>Anggota</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Cucu R</td><td>Anggota</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Neneng</td><td>Anggota</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Titi M</td><td>Anggota</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Suryati</td><td>Sekretaris</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Fatmawati</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Saeraah</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Seniah</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Habibbahurripa'ah</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Wiwin Sunarti</td><td>Sekretaris</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Semiati</td><td>Anggota</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Warti A</td><td>Anggota</td><td>Ngelo</td><td>eki18wo</td></tr>
+                        <tr><td>Sariyah</td><td>Anggota</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Jirah</td><td>Anggota</td><td>Ngelo</td><td>eki18wo</td></tr>
+                        <tr><td>Ani Maya Sopa</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Partini</td><td>Anggota</td><td>Desa Phuuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Rohma</td><td>Anggota</td><td>Desa Phuuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Cici</td><td>Anggota</td><td>Desa Phuuhopa</td><td>di 19S</td></tr>
+                        <tr><td>Sri Sumari</td><td>Anggota</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Supinah</td><td>Anggota</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Warti B</td><td>Anggota</td><td>Ngelo</td><td>eki18wo</td></tr>
+                        <tr><td>Sulasri</td><td>Anggota</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Indayani</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Ani</td><td>Anggota</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Ria Hartini</td><td>Bendahara</td><td>Petak</td><td>roh16h</td></tr>
+                        <tr><td>Kartini</td><td>Bendahara</td><td>Jipanghulu</td><td>eki18wo</td></tr>
+                        <tr><td>Ira Yusnita</td><td>Bendahara</td><td>Desa Puuhopa</td><td>di 19S</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -237,12 +275,13 @@
                     </tbody>
                 </table>
             </div>
-
-            <a href="https://salmanajima.github.io/SSLM/" target="_blank" class="btn-sub-menu">
-                <span>📊 Hasil Data Kelompok & Inventaris Lengkap</span>
-                <span class="arrow">↗</span>
-            </a>
         </div>
+
+        <!-- TOMBOL WEBSITE KELOMPOK 3 POKLAHSAR -->
+        <button onclick="alert('Anda sudah berada di Website Kelompok 3 POKLAHSAR')" class="website-btn">
+            🌐 Website Kelompok 3 POKLAHSAR
+        </button>
+
     </div>
 
     <footer>
@@ -257,7 +296,6 @@
                 menu.style.display = "none";
                 element.classList.remove("active");
             } else {
-                // Tutup menu lain jika ada
                 document.querySelectorAll('.submenu-container').forEach(m => m.style.display = "none");
                 document.querySelectorAll('.btn-main-menu').forEach(btn => btn.classList.remove("active"));
                 
