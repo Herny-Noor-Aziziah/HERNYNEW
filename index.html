@@ -161,7 +161,6 @@
             <div class="subtitle-main">Sistem Informasi Manajemen Perikanan</div>
         </header>
 
-        <!-- INDIVIDU -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-individu', this)">
             <span>📁 INDIVIDU</span>
             <span class="arrow">▼</span>
@@ -173,7 +172,6 @@
             </a>
         </div>
 
-        <!-- KELOMPOK -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-kelompok', this)">
             <span>📁 KELOMPOK</span>
             <span class="arrow">▼</span>
@@ -275,10 +273,23 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Rencana Usaha Bersama <span class="arrow">▼</span></div>
+            <div id="rencana-usaha-content" class="content-container">
+                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok Rencana Usaha Bersama</h3>
+                <table>
+                    <thead>
+                        <tr><th>Nama Poklahsar</th><th>Rencana Produk Olahan</th><th>Target Pasar Utama</th><th>Estimasi Modal</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Poklahsar Bunga Merah</td><td>Terasi Udang Premium</td><td>Pasar Lokal & Ekspor Regional</td><td>Rp 10.000.000</td></tr>
+                        <tr><td>Poklahsar Srikandi</td><td>Keripik Belut Crispy</td><td>Supermarket & Toko Oleh-oleh</td><td>Rp 7.500.000</td></tr>
+                        <tr><td>Poklahsar Sumber Rejeki</td><td>Abon Ikan Patin & Jendil</td><td>E-Commerce & Pasar Tradisional</td><td>Rp 12.000.000</td></tr>
+                        <tr><td>Poklahsar Waroh</td><td>Manisan & Dodol Rumput Laut</td><td>Sentra Kuliner & Wisata</td><td>Rp 8.500.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-       
-
     </div>
 
     <footer>
