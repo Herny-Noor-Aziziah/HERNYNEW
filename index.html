@@ -81,23 +81,6 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
         }
-        .website-btn {
-            background: linear-gradient(to right, #10b981, #34d399);
-            color: white;
-            font-weight: 700;
-            font-size: 1.15rem;
-            padding: 1.4rem 2rem;
-            text-align: center;
-            border-radius: 16px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
-            transition: all 0.3s ease;
-        }
-        .website-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.4);
-        }
         .arrow { 
             transition: transform 0.3s ease; 
             font-size: 1.1rem; 
@@ -161,6 +144,7 @@
             <div class="subtitle-main">Sistem Informasi Manajemen Perikanan</div>
         </header>
 
+        <!-- INDIVIDU -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-individu', this)">
             <span>📁 INDIVIDU</span>
             <span class="arrow">▼</span>
@@ -172,6 +156,7 @@
             </a>
         </div>
 
+        <!-- KELOMPOK -->
         <div class="btn-main-menu" onclick="toggleMenu('menu-kelompok', this)">
             <span>📁 KELOMPOK</span>
             <span class="arrow">▼</span>
@@ -212,7 +197,7 @@
 
             <div class="btn-sub-menu" onclick="showOnlyContent('anggota-content', this)">👥 Data Anggota Kelompok <span class="arrow">▼</span></div>
             <div id="anggota-content" class="content-container">
-                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Data Anggota Kelompok (Lengkap)</h3>
+                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Data Anggota Kelompok</h3>
                 <table>
                     <thead>
                         <tr><th>Nama</th><th>Jabatan</th><th>Alamat</th><th>Token Kelompok</th></tr>
@@ -274,18 +259,19 @@
                 </table>
             </div>
 
-            <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Rencana Usaha Bersama <span class="arrow">▼</span></div>
+            <!-- YANG TERBARU: HANYA MENAMBAHKAN TOMBOL SUB-MENU DAN TABEL DATA KELOMPOKNYA saja -->
+            <div class="btn-sub-menu" onclick="showOnlyContent('rencana-usaha-content', this)">📊 Hasil Data Kelompok & Rencana Usaha Bersama <span class="arrow">▼</span></div>
             <div id="rencana-usaha-content" class="content-container">
-                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok Rencana Usaha Bersama</h3>
+                <h3 style="color:var(--text-yellow); margin-bottom:1rem;">Hasil Data Kelompok & Rencana Usaha Bersama</h3>
                 <table>
                     <thead>
-                        <tr><th>Nama Poklahsar</th><th>Rencana Produk Olahan</th><th>Target Pasar Utama</th><th>Estimasi Modal</th></tr>
+                        <tr><th>Nama Poklahsar</th><th>Token</th><th>Alamat Kelompok</th><th>Komoditas Utama</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Poklahsar Bunga Merah</td><td>Terasi Udang Premium</td><td>Pasar Lokal & Ekspor Regional</td><td>Rp 10.000.000</td></tr>
-                        <tr><td>Poklahsar Srikandi</td><td>Keripik Belut Crispy</td><td>Supermarket & Toko Oleh-oleh</td><td>Rp 7.500.000</td></tr>
-                        <tr><td>Poklahsar Sumber Rejeki</td><td>Abon Ikan Patin & Jendil</td><td>E-Commerce & Pasar Tradisional</td><td>Rp 12.000.000</td></tr>
-                        <tr><td>Poklahsar Waroh</td><td>Manisan & Dodol Rumput Laut</td><td>Sentra Kuliner & Wisata</td><td>Rp 8.500.000</td></tr>
+                        <tr><td>Poklahsar Bunga Merah</td><td>rah12ad</td><td>Bangkalan</td><td>Udang</td></tr>
+                        <tr><td>Srikandi</td><td>di 19S</td><td>Konawe</td><td>Belut</td></tr>
+                        <tr><td>Waroh</td><td>roh16h</td><td>Lombok Barat</td><td>Rumput Laut</td></tr>
+                        <tr><td>Sumber Rejeki</td><td>eki18wo</td><td>Bojonegoro</td><td>Ikan Jendil & Patin</td></tr>
                     </tbody>
                 </table>
             </div>
